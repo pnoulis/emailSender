@@ -2,6 +2,10 @@
 
 interface
 uses
+  {Own}
+  {Own Libs}
+  {3rd Libs}
+  {System}
   Winapi.Windows,
   Winapi.Messages,
   System.SysUtils,
@@ -15,11 +19,20 @@ uses
 type
   TFRMEmailSettings = class(TFrame)
     private
-      { Private declarations }
+      { GETTERS }
+      { SETTERS }
+      { METHODS }
+      { HANDLERS }
     public
-      { Public declarations }
+      { INTERFACE }
+      { PROPERTIES }
   end;
 
 implementation
 {$R *.dfm}
+// ------------------------------- { INTERFACE } ---------------------------- //
+// ------------------------------- { HANDLERS } ----------------------------- //
+// ------------------------------- { METHODS } ------------------------------ //
+// ------------------------------- { SETTERS } ------------------------------ //
+// ------------------------------- { GETTERS } ------------------------------ //
 end.

@@ -2,6 +2,10 @@
 
 interface
 uses
+  {Own}
+  {Own Libs}
+  {3rd Libs}
+  {System}
   Winapi.Windows,
   Winapi.Messages,
   System.SysUtils,
@@ -15,9 +19,20 @@ uses
 type
   TFREmail = class(TForm)
     private
+      { GETTERS }
+      { SETTERS }
+      { METHODS }
+      { HANDLERS }
     public
+      { INTERFACE }
+      { PROPERTIES }
   end;
 
 implementation
 {$R *.dfm}
+// ------------------------------- { INTERFACE } ---------------------------- //
+// ------------------------------- { HANDLERS } ----------------------------- //
+// ------------------------------- { METHODS } ------------------------------ //
+// ------------------------------- { SETTERS } ------------------------------ //
+// ------------------------------- { GETTERS } ------------------------------ //
 end.
