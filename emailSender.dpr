@@ -3,7 +3,8 @@
 uses
   Vcl.Forms,
   main in 'src\main.pas' {FRMain},
-  email in 'src\email.pas' {FREmail};
+  email in 'src\email.pas' {FREmail},
+  emailSettings in 'src\emailSettings.pas' {FRMEmailSettings: TFrame};
 
 {$R *.res}
 

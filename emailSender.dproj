@@ -114,6 +114,11 @@
             <Form>FREmail</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\emailSettings.pas">
+            <Form>FRMEmailSettings</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
