@@ -124,6 +124,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="src\email-agents\emailAgents.pas"/>
+        <DCCReference Include="src\email-agents\emailAgentInternetCleverSuite.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

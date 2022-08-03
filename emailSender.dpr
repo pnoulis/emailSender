@@ -5,7 +5,9 @@ uses
   main in 'src\main.pas' {FRMain},
   email in 'src\email.pas' {FREmail},
   emailSettings in 'src\emailSettings.pas' {FRMEmailSettings: TFrame},
-  emailComposer in 'src\emailComposer.pas' {FRMEmailComposer: TFrame};
+  emailComposer in 'src\emailComposer.pas' {FRMEmailComposer: TFrame},
+  emailAgents in 'src\email-agents\emailAgents.pas',
+  emailAgentInternetCleverSuite in 'src\email-agents\emailAgentInternetCleverSuite.pas';
 
 {$R *.res}
 
