@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_DcuOutput>.\build\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\build\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -58,6 +58,8 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>emailSender</SanitizedProjectName>
+        <VerInfo_Locale>1032</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>JvNet;vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;uniGUI28;appanalytics;IndyProtocols;vclx;uniGUI28Chart;frxe28;IndyIPClient;dbxcds;vcledge;uniGUI28Core;EhLib280;bindcompvclwinx;FmxTeeUI;frxFD28;emsedge;bindcompfmx;DBXFirebirdDriver;JvBands;fsDB28;inetdb;JvAppFrm;ibmonitor;FireDACSqliteDriver;DbxClientDriver;ViDelphi_Rio;FireDACASADriver;Tee;soapmidas;JclVcl;vclactnband;TeeUI;frxIntIO28;fmxFireDAC;dbexpress;Jcl;officeXPrt;FireDACInfxDriver;JvManagedThreads;frxDBX28;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;JvPascalInterpreter;uIndy28;vcltouch;fmxase;frx28;ipstudiowin;clinetsuite_110;JvPluginSystem;DBXOdbcDriver;JvDB;dbrtl;JvTimeFramework;FireDACDBXDriver;FireDACOracleDriver;fsFD28;fmxdae;TeeDB;FireDACMSAccDriver;JvCustom;CustomIPTransport;FireDACMSSQLDriver;JvSystem;EhLibIBXDataDrivers280;ipstudiowinwordxp;uniGUI28m;DataSnapIndy10ServerTransport;JclDeveloperTools;JvControls;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;JvCrypt;FireDACMongoDBDriver;JvJans;JvMM;IndySystem;JvWizards;frxDB28;FireDACTDataDriver;JvGlobus;vcldb;ibxbindings;frxIntIOIndy28;uSynEdit_R2024;JclContainers;JvPageComps;vclFireDAC;JvCore;fs28;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;QExport4RT;hbTapi11;IndyCore;RESTBackendComponents;FMXfsTee28;fsTee28;bindcompdbx;mypackage;rtl;FireDACMySQLDriver;FMXfs28;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;JvDotNetCtrls;JvHMI;DBXSybaseASEDriver;JvRuntimeDesign;uniGUI28VCL;DBXDb2Driver;JvXPCtrls;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;QImport3RT;ibxpress;JvStdCtrls;JvDlgs;bindcompvcl;dsnap;JvDocking;JvCmp;JvPrintPreview;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;FMXfsADO28;vclib;FMXfsDB28;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXTee;fsADO28;BnUniguui;EhLibADODataDrivers280;EhLibDBXDataDrivers280;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -68,6 +70,7 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;uniGUI28;appanalytics;IndyProtocols;vclx;uniGUI28Chart;IndyIPClient;dbxcds;vcledge;uniGUI28Core;EhLib280;bindcompvclwinx;FmxTeeUI;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;Tee;soapmidas;vclactnband;TeeUI;fmxFireDAC;dbexpress;officeXPrt;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;uIndy28;vcltouch;fmxase;ipstudiowin;clinetsuite_110;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;TeeDB;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;EhLibIBXDataDrivers280;uniGUI28m;DataSnapIndy10ServerTransport;uniTools28;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;vcldb;ibxbindings;uSynEdit_R2024;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;QExport4RT;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;uniGUI28VCL;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;QImport3RT;ibxpress;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXTee;EhLibADODataDrivers280;EhLibDBXDataDrivers280;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -86,6 +89,8 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -103,6 +108,10 @@
         </DelphiCompile>
         <DCCReference Include="src\main.pas">
             <Form>FRMain</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\email.pas">
+            <Form>FREmail</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -125,9 +134,14 @@
                 <Source>
                     <Source Name="MainSource">emailSender.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k280.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp280.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win32\Debug\emailSender.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="build\Win32\Debug\emailSender.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>emailSender.exe</RemoteName>
                         <Overwrite>true</Overwrite>

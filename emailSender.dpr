@@ -2,7 +2,8 @@
 
 uses
   Vcl.Forms,
-  main in 'src\main.pas' {FRMain};
+  main in 'src\main.pas' {FRMain},
+  email in 'src\email.pas' {FREmail};
 
 {$R *.res}
 
