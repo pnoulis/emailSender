@@ -33,8 +33,8 @@ type
       { GETTERS }
       { SETTERS }
       { METHODS }
-      procedure HandleEmailClose(Sender: TComponent; const EmailDelivered: Boolean;
-          Err: Exception);
+      procedure HandleEmailClose(Sender: TComponent;
+          const EmailDelivered: Boolean; Err: Exception);
     public
       { INTERFACE }
   end;
@@ -43,6 +43,11 @@ var
   FRMain: TFRMain;
 
 implementation
+uses
+  {Own}
+  {System}
+  System.Generics.Collections,
+  System.IOUtils;
 {$R *.dfm}
 
 // ------------------------------- { INTERFACE } ---------------------------- //
@@ -99,4 +104,6 @@ begin
   const AnEmail = TFREmail.Create(Self, HandleEmailClose, TestMode.Checked);
   AnEmail.Send(False);
 end;
+
+begin
 end.

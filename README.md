@@ -97,3 +97,13 @@ Email.Create -> success in reading settings -> Email.displaySettings(parent = aW
 - CASE 3
 Email.create -> close or cancel on Settings ->
 **DONE**
+
+# Developing
+## Environment variables
+The environment variables are declared in "config/config.ini".
+They are only read when the library is used as an executable program and not
+as standalone units.
+
+\[env\]
+type= dev | production
+mode= - | test

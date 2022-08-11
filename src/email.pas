@@ -45,8 +45,7 @@ type
     public
       { INTERFACE }
       constructor Create(AOwner: TComponent = nil;
-          const HandleEmailClose: TOnEmailDone = nil;
-          const TestMode: Boolean = False); reintroduce;
+          const HandleEmailClose: TOnEmailDone = nil); reintroduce;
       destructor Destroy; override;
       procedure Send(const AskUserToComposeEmail: Boolean = True);
       procedure DisplaySettings(AOwner: TWinControl = nil);
@@ -69,11 +68,10 @@ const EMAIL_AGENT = TEnumEmailAgents.ICS;
   // ------------------------------- { INTERFACE } ---------------------------- //
 
 constructor TFREmail.Create(AOwner: TComponent;
-    const HandleEmailClose: TOnEmailDone; const TestMode: Boolean);
+    const HandleEmailClose: TOnEmailDone);
 begin
   inherited Create(AOwner);
   FOnEmailClose := HandleEmailClose;
-  FTestMode := TestMode;
   FDone := False;
 
   try
@@ -209,5 +207,7 @@ begin
     FSettings := TFRMEmailSettings.Create(Self);
   Result := FSettings;
 end;
-
+begin
+{$IFDEF TEST}
+{$ENDIF}
 end.

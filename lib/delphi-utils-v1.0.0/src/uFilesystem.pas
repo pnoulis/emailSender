@@ -20,7 +20,6 @@ interface
 
 implementation
 uses
-FMX.Dialogs,
 System.sysUtils,
 System.IOUtils;
 

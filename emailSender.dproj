@@ -89,6 +89,40 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_ExeOutput>.\build\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_DcuOutput>.\build\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_Define>DEV;$(DCC_Define)</DCC_Define>
+        <PreBuildEvent><![CDATA[set BDS=$(BDS)
+set Config=$(Config)
+set Defines=$(DEFINES)
+set DIR=$(DIR)
+set INCLUDEPATH=$(INCLUDEPATH)
+set INPUTDIR=$(INPUTDIR)
+set INPUTTEXT=$(INPUTEXT)
+set INPUTFILENAME=$(INPUTFILENAME)
+set INPUTNAME=$(INPUTNAME)
+set INPUTPATH=$(INPUTPATH)
+set LOCALCOMMAND=$(LOCALCOMMAND)
+set OUTPUTDIR=$(OUTPUTDIR)
+set OUTPUTTEXT=$(OUTPUTEXT)
+set OUTPUTFILENAME=$(OUTPUTFILENAME)
+set OUTPUTNAME=$(OUTPUTNAME)
+set OUTPUTPATH=$(OUTPUTPATH)
+set Path=$(Path)
+set Platform=$(Platform)
+set PROJECTDIR=$(PROJECTDIR)
+set PROJECTEXT=$(PROJECTEXT)
+set PROJECTFILENAME=$(PROJECTFILENAME)
+set PROJECTNAME=$(PROJECTNAME)
+set PROJECTPATH=$(PROJECTPATH)
+set SAVE=$(SAVE)
+set SystemRoot=$(SystemRoot)
+set WINDIR=$(WINDIR)
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\initBuild.ps1
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\preBuild.debug.ps1
+$(PreBuildEvent)]]></PreBuildEvent>
+        <PostBuildEvent><![CDATA[powershell -ExecutionPolicy Unrestricted -file scripts\build-events\postBuild.debug.ps1
+$(PostBuildEvent)]]></PostBuildEvent>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
@@ -101,6 +135,42 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_ExeOutput>.\build\$(Platform)\$(Config)</DCC_ExeOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_DcuOutput>.\build\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_Define>PRODUCTION;$(DCC_Define)</DCC_Define>
+        <PreBuildEvent><![CDATA[set BDS=$(BDS)
+set Config=$(Config)
+set Defines=$(DEFINES)
+set DIR=$(DIR)
+set INCLUDEPATH=$(INCLUDEPATH)
+set INPUTDIR=$(INPUTDIR)
+set INPUTTEXT=$(INPUTEXT)
+set INPUTFILENAME=$(INPUTFILENAME)
+set INPUTNAME=$(INPUTNAME)
+set INPUTPATH=$(INPUTPATH)
+set LOCALCOMMAND=$(LOCALCOMMAND)
+set OUTPUTDIR=$(OUTPUTDIR)
+set OUTPUTTEXT=$(OUTPUTEXT)
+set OUTPUTFILENAME=$(OUTPUTFILENAME)
+set OUTPUTNAME=$(OUTPUTNAME)
+set OUTPUTPATH=$(OUTPUTPATH)
+set Path=$(Path)
+set Platform=$(Platform)
+set PROJECTDIR=$(PROJECTDIR)
+set PROJECTEXT=$(PROJECTEXT)
+set PROJECTFILENAME=$(PROJECTFILENAME)
+set PROJECTNAME=$(PROJECTNAME)
+set PROJECTPATH=$(PROJECTPATH)
+set SAVE=$(SAVE)
+set SystemRoot=$(SystemRoot)
+set WINDIR=$(WINDIR)
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\initBuild.ps1
+powershell -ExecutionPolicy Unrestricted -file scripts\build-events\preBuild.release.ps1
+$(PreBuildEvent)]]></PreBuildEvent>
+        <PostBuildEvent><![CDATA[powershell -ExecutionPolicy Unrestricted -file scripts\build-events\postBuild.release.ps1
+$(PostBuildEvent)]]></PostBuildEvent>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -108,24 +178,22 @@
         </DelphiCompile>
         <DCCReference Include="src\main.pas">
             <Form>FRMain</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\email.pas">
             <Form>FREmail</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="src\emailSettings.pas">
             <Form>FRMEmailSettings</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="src\emailComposer.pas">
             <Form>FRMEmailComposer</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="src\email-agents\emailAgents.pas"/>
         <DCCReference Include="src\email-agents\emailAgentInternetCleverSuite.pas"/>
+        <DCCReference Include="lib\delphi-utils-v1.0.0\src\uConfig.pas"/>
+        <DCCReference Include="lib\delphi-utils-v1.0.0\src\uFilesystem.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -980,4 +1048,20 @@
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
     <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>set BDS=$(BDS)&amp;&amp;set Config=$(Config)&amp;&amp;set Defines=$(DEFINES)&amp;&amp;set DIR=$(DIR)&amp;&amp;set INCLUDEPATH=$(INCLUDEPATH)&amp;&amp;set INPUTDIR=$(INPUTDIR)&amp;&amp;set INPUTTEXT=$(INPUTEXT)&amp;&amp;set INPUTFILENAME=$(INPUTFILENAME)&amp;&amp;set INPUTNAME=$(INPUTNAME)&amp;&amp;set INPUTPATH=$(INPUTPATH)&amp;&amp;set LOCALCOMMAND=$(LOCALCOMMAND)&amp;&amp;set OUTPUTDIR=$(OUTPUTDIR)&amp;&amp;set OUTPUTTEXT=$(OUTPUTEXT)&amp;&amp;set OUTPUTFILENAME=$(OUTPUTFILENAME)&amp;&amp;set OUTPUTNAME=$(OUTPUTNAME)&amp;&amp;set OUTPUTPATH=$(OUTPUTPATH)&amp;&amp;set Path=$(Path)&amp;&amp;set Platform=$(Platform)&amp;&amp;set PROJECTDIR=$(PROJECTDIR)&amp;&amp;set PROJECTEXT=$(PROJECTEXT)&amp;&amp;set PROJECTFILENAME=$(PROJECTFILENAME)&amp;&amp;set PROJECTNAME=$(PROJECTNAME)&amp;&amp;set PROJECTPATH=$(PROJECTPATH)&amp;&amp;set SAVE=$(SAVE)&amp;&amp;set SystemRoot=$(SystemRoot)&amp;&amp;set WINDIR=$(WINDIR)&amp;&amp;powershell -ExecutionPolicy Unrestricted -file scripts\build-events\initBuild.ps1&amp;&amp;powershell -ExecutionPolicy Unrestricted -file scripts\build-events\preBuild.debug.ps1</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -file scripts\build-events\postBuild.debug.ps1</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Win32'">
+        <PreBuildEvent>set BDS=$(BDS)&amp;&amp;set Config=$(Config)&amp;&amp;set Defines=$(DEFINES)&amp;&amp;set DIR=$(DIR)&amp;&amp;set INCLUDEPATH=$(INCLUDEPATH)&amp;&amp;set INPUTDIR=$(INPUTDIR)&amp;&amp;set INPUTTEXT=$(INPUTEXT)&amp;&amp;set INPUTFILENAME=$(INPUTFILENAME)&amp;&amp;set INPUTNAME=$(INPUTNAME)&amp;&amp;set INPUTPATH=$(INPUTPATH)&amp;&amp;set LOCALCOMMAND=$(LOCALCOMMAND)&amp;&amp;set OUTPUTDIR=$(OUTPUTDIR)&amp;&amp;set OUTPUTTEXT=$(OUTPUTEXT)&amp;&amp;set OUTPUTFILENAME=$(OUTPUTFILENAME)&amp;&amp;set OUTPUTNAME=$(OUTPUTNAME)&amp;&amp;set OUTPUTPATH=$(OUTPUTPATH)&amp;&amp;set Path=$(Path)&amp;&amp;set Platform=$(Platform)&amp;&amp;set PROJECTDIR=$(PROJECTDIR)&amp;&amp;set PROJECTEXT=$(PROJECTEXT)&amp;&amp;set PROJECTFILENAME=$(PROJECTFILENAME)&amp;&amp;set PROJECTNAME=$(PROJECTNAME)&amp;&amp;set PROJECTPATH=$(PROJECTPATH)&amp;&amp;set SAVE=$(SAVE)&amp;&amp;set SystemRoot=$(SystemRoot)&amp;&amp;set WINDIR=$(WINDIR)&amp;&amp;powershell -ExecutionPolicy Unrestricted -file scripts\build-events\initBuild.ps1&amp;&amp;powershell -ExecutionPolicy Unrestricted -file scripts\build-events\preBuild.release.ps1</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -file scripts\build-events\postBuild.release.ps1</PostBuildEvent>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
 </Project>

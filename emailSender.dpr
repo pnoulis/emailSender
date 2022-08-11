@@ -8,12 +8,16 @@ uses
   EmailComposer in 'src\emailComposer.pas' {FRMEmailComposer: TFrame} ,
   EmailAgents in 'src\email-agents\emailAgents.pas',
   EmailAgentInternetCleverSuite
-      in 'src\email-agents\emailAgentInternetCleverSuite.pas';
+      in 'src\email-agents\emailAgentInternetCleverSuite.pas',
+  UConfig in 'lib\delphi-utils-v1.0.0\src\uConfig.pas',
+  UFilesystem in 'lib\delphi-utils-v1.0.0\src\uFilesystem.pas';
 
 {$R *.res}
 
 begin
+{$IFDEF DEBUG}
   ReportMemoryLeaksOnShutdown := True;
+{$ENDIF}
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFRMain, FRMain);
